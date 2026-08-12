@@ -1,0 +1,87 @@
+# AI Memory System (memory-kit) Protocol
+
+This project (FAOPS / Q9 Multi-Speciality Hospital site) uses an audit-enforced,
+bidirectional, linked-memory system located in the `ai-context/` directory,
+anchored by `CLAUDE.md` at the project root. You MUST strictly adhere to this
+memory system.
+
+## 1. Context Loading on Session Start (MANDATORY)
+
+Before writing any code, executing scripts, or suggesting architecture decisions,
+you MUST read the following context nodes to understand the project state:
+
+- `CLAUDE.md` -- The root memory node (overall workspace rules and role definition).
+- `ai-context/state.md` -- Current active tasks, blockers, and module status
+  (max 100 lines).
+- `ai-context/modules/<module>/<module>.md` -- The specific context file for
+  whichever module/feature area you are touching (max 250 lines).
+
+Module map (pick the ones touching your change):
+
+- `routing-shell`          -- `src/App.jsx`, `src/main.jsx`, `src/layout/MainLayout.jsx`, `src/components/ScrollToTop.jsx`
+- `navigation`             -- `src/components/layout/*`, `src/components/Footer.jsx`, `src/components/EmergencyBanner.jsx`
+- `home`                   -- `src/pages/Home.jsx`, `src/components/Hero.jsx`, `src/components/PresidentMessage.jsx`
+- `about-governance`       -- About / History / Vision / Mission / Values / Programs / Council / Committee / Advisory / Organization / GeneralAssembly / Constitution / Presidentcorner + `src/components/about/*`
+- `doctors`                -- `src/pages/Doctors.jsx`, `src/pages/DoctorProfile.jsx`, `src/components/DoctorCard.jsx`, `src/data/doctors.js`
+- `departments-services`   -- `src/pages/Departments.jsx`, `DepartmentDetails.jsx`, `Services.jsx`, `src/components/DepartmentCard.jsx`, `src/data/department*.js*`
+- `appointment`            -- `src/pages/Appointment.jsx`, `src/components/AppointmentForm.jsx`
+- `events-congresses`      -- `src/pages/Events.jsx`, `Congresses.jsx`, `SocietyCongresses.jsx`, `src/components/events/*`, `src/data/eventsData.js`
+- `membership`             -- `src/pages/MembershipPage.jsx`, `Membership.jsx`, `Countrydetails.jsx`, `src/data/membershipData.js`, `src/data/countryDetailsData.js`
+- `gallery-media`          -- `src/pages/Gallery.jsx`, `gallerygrid.jsx`, `FAOPS2022.jsx`, `FAOPS2023.jsx`, `src/components/GalleryGrid.jsx`, `public/gallery/*`
+- `publications`           -- `src/pages/Pulication.jsx`, `src/data/publicationsData.js`, `public/*.pdf`
+- `contact-faq`            -- `src/pages/Contact.jsx`, `ContactUs.jsx`, `FAQ.jsx`, `UsefulLinks.jsx`, `src/components/FAQItem.jsx`
+- `legal`                  -- `src/pages/PrivacyPolicy.jsx`, `TermsConditions.jsx`, `Cookiepolicy.jsx`
+- `data-layer`             -- `src/data/*` (all static datasets and nav config)
+
+## 2. Self-Healing & Memory Modification Rules
+
+When you edit files in the codebase, you are responsible for updating the
+corresponding memory files:
+
+- **Bumping Verification:** When you create or modify a memory file, bump its
+  `last_verified` UTC timestamp in the YAML frontmatter to the current time.
+- **Preserving Links:** Maintain the parent-child structure. If you add a new
+  memory file, declare its `parent` relative path in the frontmatter, and add it
+  to the `children` array of its parent node.
+- **Compaction & Size Control:** Keep memory concise.
+  - Module memory files must not exceed 250 lines.
+  - State files must not exceed 100 lines.
+  - If a file starts bloating, prune completed items or archive older logs into
+    `ai-context/archive/`.
+
+## 3. Drift Prevention (The Anti-Rot Core)
+
+Any code modification requires a matching memory documentation update.
+
+- If you modify code under a module path (see map above), you MUST update the
+  corresponding documentation under `ai-context/modules/<name>/` in the same turn
+  or in a follow-up commit.
+- Document any schema changes, route additions, data-source changes, or design
+  decisions.
+- New page under `src/pages/` -> add its route in `routing-shell` memory AND its
+  domain module memory. Do not leave routes undocumented.
+
+## 4. Code Grounding (Anchors)
+
+Ground documentation in reality. When adding documentation, link it to specific
+source files using YAML frontmatter anchors:
+
+- `code:<file-path>:<line-range>` (e.g. `code:src/App.jsx:1-120`)
+- `data:<file-path>` (e.g. `data:src/data/doctors.js`)
+- `asset:<file-path>` (e.g. `asset:public/gallery/`)
+
+Prefer citing the source over duplicating its contents inside memory.
+
+## 5. Verification
+
+After completing a task:
+
+- Run `npm run memory:audit` to verify bidirectional links, frontmatter syntax,
+  and size caps.
+- Run `npm run build` (Vite) to confirm the app still compiles.
+- Fix any formatting, linking, or build violations before completing your turn.
+
+Helper scripts:
+- `npm run memory:audit`  -- validate links, frontmatter, size caps
+- `npm run memory:doctor` -- deeper health check (stale nodes, orphans)
+- `npm run memory:new -- <path>` -- scaffold a new memory node with correct frontmatter

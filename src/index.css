@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #0f172a;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 🔥 SMOOTHER ANIMATION */
+.animate-fadeIn {
+  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+
+/* Hero floating stat cards -- CSS keyframes so the loop never re-renders React */
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-float {
+  animation: heroFloat 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Slower, longer drift for the hero image itself. Lives on the inner image
+   wrapper, never on the Framer Motion element, so the entrance transform and
+   this loop don't fight over `transform`. */
+@keyframes heroFloatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-float-slow {
+  animation: heroFloatSlow 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Negative delays stagger the cards without holding them at rest first */
+.hero-float-delay-1 {
+  animation-delay: -1.8s;
+}
+
+.hero-float-delay-2 {
+  animation-delay: -3.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .hero-float-slow {
+    animation: none;
+  }
+}
+
+/* Swiper Custom styling */
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #F7DB07;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 28px !important;
+  font-weight: bold;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}

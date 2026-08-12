@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Memory Audit on Save",
+      "trigger": "PostFileSave",
+      "description": "Runs the memory-kit audit whenever CLAUDE.md or any file under ai-context/ is saved, so broken bidirectional links, malformed frontmatter, or size-cap overruns surface immediately.",
+      "matcher": "(CLAUDE\\.md|ai-context[\\\\/].*\\.md)$",
+      "action": {
+        "type": "command",
+        "command": "npm run memory:audit",
+        "timeout": 30
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Load Memory Protocol on Session Start",
+      "trigger": "SessionStart",
+      "description": "Injects the memory-kit reading protocol at the start of every session so the agent loads CLAUDE.md, state.md, and the relevant module memory before writing code.",
+      "action": {
+        "type": "agent",
+        "prompt": "This project uses the memory-kit protocol. Before touching code:\n\n1. Read `CLAUDE.md` at the repo root.\n2. Read `ai-context/state.md` for active tasks and open decisions.\n3. Read the module memory file(s) under `ai-context/modules/` that cover the code you plan to change. The module map lives in `.cursorrules` and `ai-context/README.md`.\n\nWhen you finish a task that touched code:\n- Update the corresponding module memory file and bump its `last_verified` timestamp.\n- If a route, dataset, or policy shifted, log the decision in `ai-context/state.md`.\n- Run `npm run memory:audit` and `npm run build` before declaring done."
+      }
+    }
+  ]
+}
