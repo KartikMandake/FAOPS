@@ -509,6 +509,7 @@ import {
   Mail,
 } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
   const gallery = [
@@ -520,7 +521,25 @@ export default function Footer() {
     "/gallery/IMG-20221112-WA0021.webp",
   ];
 
-  const visitors = ["0", "0", "2", "6", "1", "9"];
+  const [visitorCount, setVisitorCount] = useState("...");
+  const [usersToday, setUsersToday] = useState("...");
+
+  useEffect(() => {
+    fetch("/api/visitors")
+      .then((res) => res.json())
+      .then((data) => {
+        setVisitorCount(data.total_count);
+        setUsersToday(data.today_count);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch visitors from DB:", err);
+        setVisitorCount("0");
+        setUsersToday("0");
+      });
+  }, []);
+
+  // Safe conversion
+  const visitors = String(visitorCount === "..." ? "000000" : visitorCount).padStart(6, "0").split("");
 
   return (
     <footer className="bg-[#1F2D4D] text-white mt-20">
@@ -838,7 +857,7 @@ export default function Footer() {
               <p className="text-gray-300">
                 Users Today :
                 <span className="ml-2 text-[#F7DB07] font-bold">
-                  4
+                  {usersToday}
                 </span>
               </p>
 
