@@ -547,43 +547,19 @@ export default function Footer() {
       {/* Top Border */}
       <div className="h-2 bg-[#F7DB07]"></div>
 
-      <div className="max-w-7xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
 
           {/* ================= CONTACT ================= */}
 
           <div>
 
-            {/* <Link to="/" className="flex items-center gap-3 mb-6"> */}
-
-              {/* <img
-                src="/logo.png"
-                alt="FAOPS"
-                className="w-16 h-16 object-contain bg-white rounded-xl p-2 shadow-lg"
-              /> */}
-
-              {/* <div>
-
-                <h2 className="text-2xl font-bold">
-                  FAOPS
-                </h2>
-
-                <p className="text-sm text-gray-300 leading-5">
-                  Federation of Asia &
-                  <br />
-                  Oceania Perinatal Societies
-                </p>
-
-              </div> */}
-
-            {/* </Link> */}
-
             <h3 className="font-semibold text-xl mb-5">
               Contact Us
             </h3>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base">
 
               <a
                 href="https://maps.app.goo.gl/prqsU6TRXMYeWRV16"
@@ -597,7 +573,7 @@ export default function Footer() {
                   className="mt-1 text-[#F7DB07] shrink-0"
                 />
 
-                <span className="leading-7 text-gray-300">
+                <span className="leading-6 sm:leading-7 text-gray-300">
                   78, Railway Lines,
                   <br />
                   Near St. Joseph High School,
@@ -615,7 +591,7 @@ export default function Footer() {
 
                 <Phone
                   size={20}
-                  className="text-[#F7DB07]"
+                  className="text-[#F7DB07] shrink-0"
                 />
 
                 (+91) 98220 96280
@@ -624,12 +600,12 @@ export default function Footer() {
 
               <a
                 href="mailto:info@faopsperinatal.org"
-                className="flex items-center gap-3 hover:text-[#F7DB07] duration-300"
+                className="flex items-center gap-3 hover:text-[#F7DB07] duration-300 break-all sm:break-normal"
               >
 
                 <Mail
                   size={20}
-                  className="text-[#F7DB07]"
+                  className="text-[#F7DB07] shrink-0"
                 />
 
                 info@faopsperinatal.org
@@ -757,7 +733,7 @@ export default function Footer() {
               Follow Us
             </h4>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
 
               {[
                 {
@@ -787,7 +763,7 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#31446F] flex items-center justify-center hover:bg-[#1E3A5F] hover:text-[#fff] duration-300"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#31446F] flex items-center justify-center hover:bg-[#1E3A5F] hover:text-[#fff] duration-300"
                 >
 
                   <Icon size={18} />
@@ -800,36 +776,34 @@ export default function Footer() {
 
           </div>
 
-                    {/* ================= GALLERY ================= */}
+          {/* ================= GALLERY ================= */}
 
+          <div>
+            <h3 className="text-xl font-semibold mb-6">
+              Gallery
+            </h3>
 
-<div>
-  <h3 className="text-xl font-semibold mb-6">
-    Gallery
-  </h3>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
 
-  <div className="grid grid-cols-3 gap-3">
+              {gallery.map((img, index) => (
 
-    {gallery.map((img, index) => (
+                <Link
+                  to="/gallery"
+                  key={index}
+                  className="block overflow-hidden border-2 border-white/15 hover:border-[#F7DB07] shadow-lg shadow-slate-950/40 transition-colors duration-300"
+                >
 
-      <Link
-        to="/gallery"
-        key={index}
-        className="block overflow-hidden border-2 border-white/15 hover:border-[#F7DB07] shadow-lg shadow-slate-950/40 transition-colors duration-300"
-      >
+                  <img
+                    src={img}
+                    alt={`Gallery ${index + 1}`}
+                    className="block w-full aspect-square object-cover hover:scale-110 duration-500 cursor-pointer"
+                  />
 
-        <img
-          src={img}
-          alt={`Gallery ${index + 1}`}
-          className="block w-full aspect-square object-cover hover:scale-110 duration-500 cursor-pointer"
-        />
+                </Link>
 
-      </Link>
+              ))}
 
-    ))}
-
-  </div>
-{/* </div> */}
+            </div>
 
             {/* Visitors */}
 
@@ -839,13 +813,13 @@ export default function Footer() {
                 Our Visitors
               </h3>
 
-              <div className="flex gap-2 mb-3">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
 
                 {visitors.map((num, index) => (
 
                   <div
                     key={index}
-                    className="w-10 h-10 rounded-lg bg-[#344474] border border-[#4b6399] flex items-center justify-center font-bold text-white shadow-md"
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-sm sm:text-base rounded-lg bg-[#344474] border border-[#4b6399] flex items-center justify-center font-bold text-white shadow-md"
                   >
                     {num}
                   </div>
@@ -854,7 +828,7 @@ export default function Footer() {
 
               </div>
 
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-sm sm:text-base">
                 Users Today :
                 <span className="ml-2 text-[#F7DB07] font-bold">
                   {usersToday}

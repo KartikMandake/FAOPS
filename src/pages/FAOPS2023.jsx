@@ -187,13 +187,13 @@ export default function faops2023() {
 
               <motion.div
                 whileHover={{ scale: 1.03 }}
-                className="overflow-hidden rounded-[30px] shadow-2xl border-4 border-white"
+                className="overflow-hidden rounded-2xl sm:rounded-[30px] shadow-2xl border-4 border-white"
               >
 
                 <img
                   src="/gallery/IMG_0300-rpku3gra1f1opxxigss2fu5q94izp3ojets8uhm1s8 (1).webp"
                   alt="FAOPS 2023"
-                  className="w-full h-[430px] object-cover duration-700 hover:scale-110"
+                  className="w-full h-[260px] sm:h-[430px] object-cover duration-700 hover:scale-105"
                 />
 
               </motion.div>
@@ -204,28 +204,23 @@ export default function faops2023() {
 
           {/* Heading */}
 
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
 
-            <span className="uppercase tracking-[5px] text-[#344474] font-semibold">
+            <span className="uppercase tracking-[3px] sm:tracking-[5px] text-[#344474] font-semibold text-xs sm:text-sm">
               Event Gallery
             </span>
 
-            <h2 className="text-4xl font-bold text-[#344474] mt-4">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#344474] mt-2 sm:mt-4">
               FAOPS 2023 Highlights
             </h2>
 
-            <div className="w-24 h-1 bg-[#F7DB07] rounded-full mx-auto my-6"></div>
-
-            {/* <p className="text-slate-600 max-w-3xl mx-auto">
-              Discover some of the most memorable moments captured
-              during FAOPS 2023.
-            </p> */}
+            <div className="w-16 sm:w-24 h-1 bg-[#F7DB07] rounded-full mx-auto my-4 sm:my-6"></div>
 
           </div>
 
           {/* Gallery */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
   {galleryImages.map((item, index) => (
 
@@ -235,12 +230,12 @@ export default function faops2023() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8 }}
-      className="group cursor-pointer rounded-[30px] overflow-hidden bg-white shadow-xl hover:shadow-2xl duration-500"
+      whileHover={{ y: -6 }}
+      className="group cursor-pointer rounded-2xl sm:rounded-[30px] overflow-hidden bg-white shadow-xl hover:shadow-2xl duration-500"
       onClick={() => setLightboxIndex(index)}
     >
 
-      <div className="bg-slate-100 flex items-center justify-center h-[340px] overflow-hidden">
+      <div className="bg-slate-100 flex items-center justify-center h-[240px] sm:h-[340px] overflow-hidden">
 
         <img
           src={item.image}
@@ -267,15 +262,15 @@ export default function faops2023() {
 
           {/* Bottom */}
 
-          <div className="mt-20 rounded-[35px] bg-white/70 backdrop-blur-xl border border-white shadow-xl p-12 text-center">
+          <div className="mt-12 sm:mt-20 rounded-2xl sm:rounded-[35px] bg-white/70 backdrop-blur-xl border border-white shadow-xl p-6 sm:p-12 text-center">
 
-            <h2 className="text-3xl font-bold text-[#344474]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#344474]">
               Thank You
             </h2>
 
-            <div className="w-20 h-1 bg-[#F7DB07] rounded-full mx-auto my-5"></div>
+            <div className="w-16 sm:w-20 h-1 bg-[#F7DB07] rounded-full mx-auto my-4 sm:my-5"></div>
 
-            <p className="text-slate-600 max-w-3xl mx-auto leading-8">
+            <p className="text-slate-600 max-w-3xl mx-auto leading-relaxed sm:leading-8 text-sm sm:text-base">
               Thank you to every delegate, speaker, healthcare
               professional and partner society who contributed to the
               success of FAOPS 2023. Together we continue advancing

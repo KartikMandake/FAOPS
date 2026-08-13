@@ -39,29 +39,29 @@ const data = [
 
 export default function VisionMission() {
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden">
+    <section className="py-12 sm:py-20 lg:py-24 bg-slate-50 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: .7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
 
-          <span className="uppercase tracking-[4px] text-[#344474] font-semibold">
+          <span className="uppercase tracking-[3px] sm:tracking-[4px] text-[#344474] text-xs sm:text-sm font-semibold">
             Our Foundation
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mt-2 sm:mt-4 text-slate-900">
             Vision, Mission & Values
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-slate-600 leading-8">
+          <p className="mt-4 sm:mt-6 max-w-3xl mx-auto text-slate-600 leading-relaxed sm:leading-8 text-sm sm:text-base">
             These guiding principles reflect FAOPS's commitment to improving
             maternal and newborn healthcare through education, collaboration,
             innovation, research, and professional excellence.
@@ -71,7 +71,7 @@ export default function VisionMission() {
 
         {/* Cards */}
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
           {data.map((item, index) => {
 
@@ -83,7 +83,7 @@ export default function VisionMission() {
                 key={index}
                 initial={{
                   opacity: 0,
-                  y: 70,
+                  y: 40,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -91,16 +91,19 @@ export default function VisionMission() {
                 }}
                 viewport={{ once: true }}
                 transition={{
-                  delay: index * .2,
-                  duration: .7,
+                  delay: index * .15,
+                  duration: .6,
                 }}
                 whileHover={{
-                  y: -12,
+                  y: -8,
                 }}
                 className={`
                   bg-white
-                  rounded-3xl
-                  p-10
+                  rounded-2xl
+                  sm:rounded-3xl
+                  p-6
+                  sm:p-8
+                  lg:p-10
                   border
                   ${item.border}
                   shadow-lg
@@ -112,29 +115,32 @@ export default function VisionMission() {
 
                 <div
                   className={`
-                    w-20
-                    h-20
+                    w-16
+                    h-16
+                    sm:w-20
+                    sm:h-20
                     rounded-2xl
                     ${item.bg}
                     flex
                     items-center
                     justify-center
-                    mb-8
+                    mb-6
+                    sm:mb-8
                   `}
                 >
 
                   <Icon
                     className={item.color}
-                    size={38}
+                    size={32}
                   />
 
                 </div>
 
-                <h3 className="text-3xl font-bold text-slate-900 mb-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 sm:mb-6">
                   {item.title}
                 </h3>
 
-                <p className="text-slate-600 leading-8">
+                <p className="text-slate-600 leading-relaxed sm:leading-8 text-sm sm:text-base">
                   {item.description}
                 </p>
 

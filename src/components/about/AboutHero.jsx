@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function AboutHero() {
   return (
-    <section className="relative h-[220px] md:h-[320px] overflow-hidden">
+    <section className="relative h-[200px] sm:h-[260px] md:h-[320px] overflow-hidden">
 
       {/* Background */}
       <div className="absolute inset-0">
@@ -28,7 +28,7 @@ export default function AboutHero() {
           repeat: Infinity,
           duration: 7,
         }}
-        className="absolute top-10 left-10 w-24 h-24 md:w-44 md:h-44 rounded-full bg-white/10 blur-3xl"
+        className="absolute top-10 left-10 w-24 h-24 md:w-44 md:h-44 rounded-full bg-white/10 blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -40,12 +40,12 @@ export default function AboutHero() {
           repeat: Infinity,
           duration: 8,
         }}
-        className="absolute bottom-5 right-16 w-32 h-32 md:w-60 md:h-60 rounded-full bg-[#F7DB07]/10 blur-3xl"
+        className="absolute bottom-5 right-16 w-32 h-32 md:w-60 md:h-60 rounded-full bg-[#F7DB07]/10 blur-3xl pointer-events-none"
       />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,33 +53,23 @@ export default function AboutHero() {
             transition={{ duration: .8 }}
           >
 
-            {/* <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white text-sm tracking-widest uppercase">
-              Federation of Asia & Oceania Perinatal Societies
-            </span> */}
-
-            <h1 className="mt-2 md:mt-6 text-3xl md:text-5xl lg:text-6xl font-bold text-white">
+            <h1 className="mt-2 md:mt-6 text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white break-words">
               About Our Organization
             </h1>
 
-            {/* <p className="mt-5 max-w-2xl text-lg text-slate-200 leading-8">
-              Advancing maternal, fetal and neonatal healthcare through
-              collaboration, education, innovation and research across Asia and
-              Oceania.
-            </p> */}
-
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mt-4 md:mt-8 text-white text-sm md:text-base">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 md:mt-8 text-white text-xs sm:text-sm md:text-base">
 
               <Link
                 to="/"
-                className="hover:text-[#F7DB07] duration-300"
+                className="hover:text-[#F7DB07] duration-300 shrink-0"
               >
                 Home
               </Link>
 
-              <ChevronRight size={16} />
+              <ChevronRight size={14} className="shrink-0" />
 
-              <span className="text-[#F7DB07]">
+              <span className="text-[#F7DB07] break-words">
                 About Us
               </span>
 

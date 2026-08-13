@@ -132,17 +132,17 @@ export default function OrganizationChart() {
 
   const MemberCard = ({ member }) => (
     <motion.div
-      whileHover={{ y: -8 }}
-      initial={{ opacity: 0, y: 40 }}
+      whileHover={{ y: -6 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group w-full sm:w-[320px] rounded-[30px] bg-white/70 backdrop-blur-xl border border-white shadow-xl overflow-hidden hover:shadow-2xl duration-500"
+      className="group w-full max-w-[320px] rounded-2xl sm:rounded-[30px] bg-white/70 backdrop-blur-xl border border-white shadow-xl overflow-hidden hover:shadow-2xl duration-500"
     >
-      <div className="bg-gradient-to-r from-[#344474] to-[#5063a8] h-32 relative">
+      <div className="bg-gradient-to-r from-[#344474] to-[#5063a8] h-28 sm:h-32 relative">
 
-        <div className="absolute left-1/2 -bottom-14 -translate-x-1/2">
+        <div className="absolute left-1/2 -bottom-12 sm:-bottom-14 -translate-x-1/2">
 
-          <div className="w-28 h-28 rounded-full bg-white shadow-xl p-2">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white shadow-xl p-2">
 
             <img
               src={member.image}
@@ -156,17 +156,17 @@ export default function OrganizationChart() {
 
       </div>
 
-      <div className="pt-20 pb-8 px-6 text-center">
+      <div className="pt-16 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 text-center">
 
-        <h3 className="text-2xl font-bold text-[#344474]">
+        <h3 className="text-xl sm:text-2xl font-bold text-[#344474]">
           {member.name}
         </h3>
 
-        <p className="text-[#1E3A5F] font-semibold mt-2">
+        <p className="text-[#1E3A5F] font-semibold mt-1 sm:mt-2 text-sm sm:text-base">
           {member.designation}
         </p>
 
-        <p className="text-slate-500 mt-2">
+        <p className="text-slate-500 mt-1 sm:mt-2 text-xs sm:text-sm">
           {member.country}
         </p>
 
@@ -182,53 +182,21 @@ export default function OrganizationChart() {
         breadcrumb="About"
       />
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <section className="py-10 sm:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6">
-
-          {/* Heading */}
-{/* 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          > */}
-
-            {/* <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-[#344474] shadow-xl">
-
-              <Users
-                className="text-[#F7DB07]"
-                size={45}
-              />
-
-            </div> */}
-{/* 
-            <h2 className="text-5xl font-bold text-[#344474] mt-8">
-              Organization Structure
-            </h2> */}
-
-            {/* <p className="mt-5 text-slate-600 max-w-3xl mx-auto text-lg leading-8">
-              Meet the dedicated leaders, office bearers, committee
-              chairpersons and advisory board members guiding the
-              Federation of Asia-Oceania Perinatal Societies.
-            </p> */}
-
-            {/* <div className="w-28 h-1 bg-[#F7DB07] rounded-full mx-auto mt-6"></div> */}
-
-          {/* </motion.div> */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Office Bearers */}
 
-          <div className="mb-24">
+          <div className="mb-12 sm:mb-24">
 
-            <h2 className="text-center text-4xl font-bold text-[#344474]">
+            <h2 className="text-center text-2xl sm:text-4xl font-bold text-[#344474]">
               Office Bearers
             </h2>
 
-            <div className="w-20 h-1 bg-[#F7DB07] rounded-full mx-auto mt-5 mb-12"></div>
+            <div className="w-16 sm:w-20 h-1 bg-[#F7DB07] rounded-full mx-auto mt-3 sm:mt-5 mb-8 sm:mb-12"></div>
 
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
 
               {officeBearers.map((member, index) => (
                 <MemberCard
@@ -243,9 +211,9 @@ export default function OrganizationChart() {
 
           {/* Deputy Secretaries */}
 
-          <div className="mb-24">
+          <div className="mb-12 sm:mb-24">
 
-            <h2 className="text-center text-4xl font-bold text-[#344474]">
+            <h2 className="text-center text-2xl sm:text-4xl font-bold text-[#344474]">
               Deputy Secretaries
             </h2>
 

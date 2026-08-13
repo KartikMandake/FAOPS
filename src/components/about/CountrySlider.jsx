@@ -25,28 +25,17 @@ const countries = [
 
 export default function CountrySlider() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-20 lg:py-24 bg-white overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
 
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 sm:mb-14">
 
-          <span className="uppercase tracking-[4px] text-[#344474] font-semibold">
+          <span className="uppercase tracking-[3px] sm:tracking-[4px] text-[#344474] font-semibold text-xs sm:text-sm">
             Member Countries
           </span>
-
-          {/* <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">
-            FAOPS Member Nations
-          </h2> */}
-{/* 
-          <p className="mt-5 text-slate-600 max-w-3xl mx-auto leading-8">
-            Our federation unites perinatal healthcare professionals,
-            researchers and organizations from across Asia and Oceania,
-            strengthening collaboration and advancing maternal and
-            newborn healthcare.
-          </p> */}
 
         </div>
 
@@ -57,7 +46,7 @@ export default function CountrySlider() {
       <div className="relative">
 
         <motion.div
-          className="flex gap-8 w-max"
+          className="flex gap-4 sm:gap-8 w-max"
           animate={{
             x: ["0%", "-50%"],
           }}
@@ -72,15 +61,17 @@ export default function CountrySlider() {
             <motion.div
               key={index}
               whileHover={{
-                y: -10,
-                scale: 1.04,
+                y: -6,
+                scale: 1.03,
               }}
               transition={{
                 duration: .3,
               }}
               className="
-              w-72
-              rounded-3xl
+              w-56
+              sm:w-72
+              rounded-2xl
+              sm:rounded-3xl
               overflow-hidden
               bg-white
               shadow-xl

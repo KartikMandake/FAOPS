@@ -513,41 +513,33 @@ const gallerySections = [
         breadcrumb="Gallery"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-10 sm:py-16">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Back Button */}
 
           <Link
             to="/gallery"
-            className="inline-flex items-center gap-2 font-semibold text-[#344474] hover:text-[#F7DB07] duration-300 mb-10"
+            className="inline-flex items-center gap-2 font-semibold text-[#344474] hover:text-[#F7DB07] duration-300 mb-8 sm:mb-10 text-sm sm:text-base"
           >
             <ArrowLeft size={18} />
             Back to Gallery
           </Link>
 
-        
-              <div>
-
-      
-
-          </div>
-
           {/* Heading */}
 
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
 
-            <span className="uppercase tracking-[5px] text-[#344474] font-semibold">
+            <span className="uppercase tracking-[3px] sm:tracking-[5px] text-[#344474] font-semibold text-xs sm:text-sm">
               Event Gallery
             </span>
-
 
           </div>
 
           {/* Gallery */}
 
-<div className="space-y-20">
+<div className="space-y-12 sm:space-y-20">
 
   {gallerySections.map((section, sectionIndex) => (
 
@@ -555,19 +547,19 @@ const gallerySections = [
 
       {/* Section Title */}
 
-      <div className="text-center mb-10">
+      <div className="text-center mb-6 sm:mb-10">
 
-        <h2 className="text-3xl font-bold text-[#344474]">
+        <h2 className="text-xl sm:text-3xl font-bold text-[#344474]">
           {section.title}
         </h2>
 
-        <div className="w-24 h-1 bg-[#F7DB07] rounded-full mx-auto mt-4"></div>
+        <div className="w-16 sm:w-24 h-1 bg-[#F7DB07] rounded-full mx-auto mt-3 sm:mt-4"></div>
 
       </div>
 
       {/* Images */}
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
         {section.images.map((image, index) => (
 
@@ -577,17 +569,17 @@ const gallerySections = [
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
   transition={{ delay: index * 0.1 }}
-  whileHover={{ y: -8 }}
-  className="group rounded-[30px] overflow-hidden bg-white shadow-xl cursor-pointer"
+  whileHover={{ y: -6 }}
+  className="group rounded-2xl sm:rounded-[30px] overflow-hidden bg-white shadow-xl cursor-pointer"
   onClick={() => setLightboxIndex(sectionOffsets[sectionIndex] + index)}
 >
 
-  <div className="bg-white p-4">
+  <div className="bg-white p-3 sm:p-4">
 
     <img
       src={image}
       alt=""
-      className="w-full h-80 object-cover transition duration-500 group-hover:scale-105 rounded-[10]"
+      className="w-full h-56 sm:h-80 object-cover transition duration-500 group-hover:scale-105 rounded-xl sm:rounded-[10px]"
     />
 
   </div>
@@ -618,15 +610,15 @@ const gallerySections = [
 
           {/* Bottom */}
 
-          <div className="mt-20 rounded-[35px] bg-white/70 backdrop-blur-xl border border-white shadow-xl p-12 text-center">
+          <div className="mt-12 sm:mt-20 rounded-2xl sm:rounded-[35px] bg-white/70 backdrop-blur-xl border border-white shadow-xl p-6 sm:p-12 text-center">
 
-            <h2 className="text-3xl font-bold text-[#344474]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#344474]">
               Thank You
             </h2>
 
-            <div className="w-20 h-1 bg-[#F7DB07] rounded-full mx-auto my-5"></div>
+            <div className="w-16 sm:w-20 h-1 bg-[#F7DB07] rounded-full mx-auto my-4 sm:my-5"></div>
 
-            <p className="text-slate-600 max-w-3xl mx-auto leading-8">
+            <p className="text-slate-600 max-w-3xl mx-auto leading-relaxed sm:leading-8 text-sm sm:text-base">
               Thank you to every delegate, speaker, healthcare
               professional and partner society who contributed to the
               success of FAOPS 2023. Together we continue advancing

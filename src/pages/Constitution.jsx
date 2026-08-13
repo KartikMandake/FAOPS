@@ -8,20 +8,20 @@ export default function Constitution() {
         breadcrumb="Home"
       />
 
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="py-10 sm:py-20 bg-slate-50 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="bg-white rounded-3xl shadow-lg p-10 border border-slate-100">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-10 border border-slate-100 break-words overflow-hidden">
 
-            <span className="uppercase tracking-[4px] text-[#344474] font-semibold">
+            <span className="uppercase tracking-[3px] sm:tracking-[4px] text-[#344474] font-semibold text-xs sm:text-sm">
               FAOPS Constitution
             </span>
 
-            <h1 className="text-4xl font-bold text-[#344474] mt-4">
+            <h1 className="text-2xl sm:text-4xl font-bold text-[#344474] mt-3 sm:mt-4">
               Constitution of the Federation of Asia and Oceania Perinatal Societies
             </h1>
 
-            <div className="w-24 h-1 bg-[#F7DB07] rounded-full mt-6 mb-10"></div>
+            <div className="w-16 sm:w-24 h-1 bg-[#F7DB07] rounded-full mt-4 sm:mt-6 mb-6 sm:mb-10"></div>
 
             {/* Article I */}
             <h2 className="text-2xl font-bold text-[#344474] mb-4">

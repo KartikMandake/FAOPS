@@ -35,40 +35,19 @@ export default function Navbar1() {
             : "bg-white"
         }`}
       >
-<div className="max-w-[1450px] mx-auto px-4 md:px-8"><div className="h-16 md:h-24 flex items-center justify-between">
-              {/* LOGO */}
+        <div className="max-w-[1450px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="h-16 md:h-20 lg:h-24 flex items-center justify-between">
+            {/* LOGO */}
 
             <Link
               to="/"
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 shrink-0"
             >
-
-              {/* <img
-                  src={logo}
-                  alt="FAOPS Logo"
-                  className="h-16 w-auto object-contain"
-                /> */}
               <img
                 src="/logo.png"
                 alt="FAOPS Logo"
-                className="h-6 md:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                className="h-10 sm:h-12 md:h-16 max-w-[68vw] sm:max-w-none object-contain transition-transform duration-300 hover:scale-105"
               />
-              {/* <div>
-
-                <h2 className="text-xl font-bold text-slate-800">
-                  
-                </h2>
-
-                <p className="text-xs text-slate-500">
-                  Federation of All Orthopaedic
-                </p>
-
-                <p className="text-xs text-slate-500">
-                  Practitioners Society
-                </p>
-
-              </div> */}
-
             </Link>
 
             {/* Desktop Menu */}
@@ -115,39 +94,14 @@ export default function Navbar1() {
 
             </div>
 
-            {/* Right */}
-
-            {/* <div className="hidden lg:flex items-center gap-4"> */}
-
-              {/* <Link
-                to="/member-login"
-                className="font-medium text-slate-700 hover:text-sky-600"
-              >
-                Login
-              </Link> */}
-
-              {/* <Link
-                to="/membership"
-                className="px-6 py-3 rounded-full
-                bg-sky-600
-                text-white
-                font-semibold
-                hover:bg-sky-700
-                duration-300
-                shadow-lg"
-              >
-                Become Member
-              </Link> */}
-
-            {/* </div> */}
-
-            {/* Mobile */}
+            {/* Mobile Button */}
 
             <button
-              className="lg:hidden"
+              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors shrink-0"
               onClick={() => setMobileOpen(true)}
+              aria-label="Open Menu"
             >
-              <Menu size={30} />
+              <Menu size={28} />
             </button>
 
           </div>

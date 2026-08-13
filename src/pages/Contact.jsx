@@ -90,7 +90,7 @@ export default function Contact() {
 
       <section className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-white">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Heading */}
 
@@ -99,26 +99,26 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <span className="uppercase tracking-[4px] text-[#344474] font-semibold text-sm">
+            <span className="uppercase tracking-[3px] sm:tracking-[4px] text-[#344474] font-semibold text-xs sm:text-sm">
               Get In Touch
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#344474] mt-3">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#344474] mt-2 sm:mt-3">
               We'd Love To Hear From You
             </h2>
 
-            <div className="w-24 h-1 bg-[#F7DB07] rounded-full mx-auto my-6" />
+            <div className="w-16 sm:w-24 h-1 bg-[#F7DB07] rounded-full mx-auto my-4 sm:my-6" />
 
-            <p className="text-slate-600 max-w-2xl mx-auto leading-8">
+            <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed sm:leading-8 text-sm sm:text-base">
               Questions about membership, congresses or collaboration in
               perinatal medicine? Send us a message and the FAOPS secretariat
               will get back to you.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8 sm:gap-10">
 
             {/* ================= CONTACT INFO ================= */}
 
@@ -130,20 +130,20 @@ export default function Contact() {
               className="lg:col-span-1 space-y-6"
             >
 
-              <div className="bg-white rounded-3xl border border-slate-200 shadow-lg p-8">
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-lg p-5 sm:p-8">
 
-                <h3 className="text-xl font-bold text-[#344474]">
+                <h3 className="text-lg sm:text-xl font-bold text-[#344474]">
                   Contact Information
                 </h3>
 
-                <div className="mt-7 space-y-6">
+                <div className="mt-5 sm:mt-7 space-y-5 sm:space-y-6">
 
                   {contactDetails.map(({ icon: Icon, label, lines, href }) => (
 
-                    <div key={label} className="flex items-start gap-4">
+                    <div key={label} className="flex items-start gap-3 sm:gap-4">
 
-                      <div className="w-11 h-11 rounded-xl bg-[#344474] flex items-center justify-center shrink-0">
-                        <Icon size={20} className="text-[#F7DB07]" />
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#344474] flex items-center justify-center shrink-0">
+                        <Icon size={18} className="text-[#F7DB07]" />
                       </div>
 
                       <div>
@@ -154,13 +154,13 @@ export default function Contact() {
                         {href ? (
                           <a
                             href={href}
-                            className="block text-slate-700 mt-1 leading-7 hover:text-[#344474] font-medium"
+                            className="block text-slate-700 mt-1 leading-relaxed sm:leading-7 hover:text-[#344474] font-medium text-sm sm:text-base break-all sm:break-normal"
                           >
                             {lines[0]}
                           </a>
                         ) : (
                           lines.map((line) => (
-                            <p key={line} className="text-slate-600 mt-1 leading-7">
+                            <p key={line} className="text-slate-600 mt-1 leading-relaxed sm:leading-7 text-sm sm:text-base">
                               {line}
                             </p>
                           ))
@@ -175,13 +175,13 @@ export default function Contact() {
 
                 {/* Socials */}
 
-                <div className="mt-8 pt-6 border-t border-slate-200">
+                <div className="mt-6 sm:mt-8 pt-6 border-t border-slate-200">
 
                   <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold">
                     Follow FAOPS
                   </p>
 
-                  <div className="flex items-center gap-3 mt-4">
+                  <div className="flex flex-wrap items-center gap-3 mt-4">
 
                     {socialLinks.map(({ icon: Icon, link, label }) => (
                       <a
@@ -190,7 +190,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={label}
-                        className="w-10 h-10 rounded-full border border-slate-200 bg-slate-50 text-[#344474] flex items-center justify-center transition-all hover:bg-[#344474] hover:text-white"
+                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-slate-50 text-[#344474] flex items-center justify-center transition-all hover:bg-[#344474] hover:text-white"
                       >
                         <Icon size={15} />
                       </a>
@@ -214,21 +214,21 @@ export default function Contact() {
               className="lg:col-span-2"
             >
 
-              <div className="bg-white rounded-3xl border border-slate-200 shadow-lg p-8 md:p-10 h-full">
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-lg p-5 sm:p-8 md:p-10 h-full">
 
                 {isSubmitted ? (
 
-                  <div className="h-full min-h-[420px] flex flex-col items-center justify-center text-center">
+                  <div className="h-full min-h-[320px] sm:min-h-[420px] flex flex-col items-center justify-center text-center p-4">
 
-                    <div className="w-16 h-16 rounded-full bg-[#344474]/10 flex items-center justify-center">
-                      <CheckCircle2 size={32} className="text-[#344474]" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#344474]/10 flex items-center justify-center">
+                      <CheckCircle2 size={28} className="text-[#344474]" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[#344474] mt-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#344474] mt-4 sm:mt-6">
                       Message Sent
                     </h3>
 
-                    <p className="text-slate-600 mt-3">
+                    <p className="text-slate-600 mt-2 sm:mt-3 text-sm sm:text-base">
                       Thank you for reaching out. We will get back to you shortly.
                     </p>
 
@@ -237,13 +237,13 @@ export default function Contact() {
                 ) : (
 
                   <>
-                    <h3 className="text-xl font-bold text-[#344474]">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#344474]">
                       Send Us A Message
                     </h3>
 
-                    <form onSubmit={handleSubmit} className="mt-7 space-y-6">
+                    <form onSubmit={handleSubmit} className="mt-5 sm:mt-7 space-y-4 sm:space-y-6">
 
-                      <div className="grid md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 
                         <div>
                           <label
@@ -285,7 +285,7 @@ export default function Contact() {
 
                       </div>
 
-                      <div className="grid md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 
                         <div>
                           <label
@@ -340,17 +340,17 @@ export default function Contact() {
                         <textarea
                           id="message"
                           name="message"
-                          rows={6}
+                          rows={5}
                           required
                           value={form.message}
                           onChange={handleChange}
-                          className="w-full rounded-xl border border-slate-300 p-4 outline-none resize-none transition focus:border-[#344474] focus:ring-2 focus:ring-[#344474]/20"
+                          className="w-full rounded-xl border border-slate-300 p-4 outline-none resize-none transition focus:border-[#344474] focus:ring-2 focus:ring-[#344474]/20 text-sm sm:text-base"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center gap-3 bg-[#344474] hover:bg-[#22345f] text-white px-8 py-4 rounded-full font-semibold transition-all"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#344474] hover:bg-[#22345f] text-white px-8 py-3.5 sm:py-4 rounded-full font-semibold transition-all text-sm sm:text-base"
                       >
                         Send Message
                         <Send size={18} />

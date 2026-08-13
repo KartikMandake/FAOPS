@@ -77,18 +77,18 @@ export default function MobileMenu({ open, setOpen }) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.35 }}
-            className="fixed top-0 right-0 h-screen w-80 bg-white shadow-2xl z-50 flex flex-col"
+            className="fixed top-0 right-0 h-screen w-[280px] sm:w-80 max-w-[85vw] bg-white shadow-2xl z-50 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b">
 
               <div>
-                <h2 className="text-2xl font-bold text-sky-700">
+                <h2 className="text-xl sm:text-2xl font-bold text-sky-700">
                   FAOPS
                 </h2>
 
                 <p className="text-xs text-slate-500">
-                  Orthopaedic Association
+                  Perinatal Societies
                 </p>
               </div>
 

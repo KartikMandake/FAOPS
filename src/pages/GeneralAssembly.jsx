@@ -370,29 +370,29 @@ const tab5Meetings = [
         breadcrumb="Home"
       />
 
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-10 sm:py-20 bg-slate-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Heading */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <h2 className="text-5xl font-bold text-[#344474]">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#344474]">
               General Assembly Meetings
             </h2>
 
-            <div className="w-24 h-1 bg-[#F7DB07] rounded-full mx-auto mt-5 mb-6"></div>
+            <div className="w-16 sm:w-24 h-1 bg-[#F7DB07] rounded-full mx-auto mt-4 sm:mt-5 mb-4 sm:mb-6"></div>
 
-            <p className="text-slate-600 max-w-4xl mx-auto leading-8 text-lg">
+            <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed sm:leading-8 text-sm sm:text-lg">
               It brings together all members of the association, including
               representatives from various specialties and regions.
             </p>
 
-            <p className="text-slate-600 max-w-5xl mx-auto leading-8 mt-4">
+            <p className="text-slate-600 max-w-5xl mx-auto leading-relaxed sm:leading-8 mt-3 sm:mt-4 text-xs sm:text-base">
               General Assembly Meetings are large-scale, periodic gatherings of
               all association members, where major decisions and strategic
               direction are set. Council Meetings are smaller, more frequent

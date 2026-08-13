@@ -53,7 +53,7 @@ export default function Hero() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="relative overflow-hidden h-[520px] sm:h-[650px] lg:h-[720px] flex items-center shadow-2xl bg-slate-900">
+              <div className="relative overflow-hidden h-[440px] sm:h-[600px] lg:h-[720px] flex items-center shadow-2xl bg-slate-900">
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <img
@@ -63,11 +63,11 @@ export default function Hero() {
                     className="w-full h-full object-cover transition-transform duration-[8000ms] scale-105"
                   />
                   {/* More transparent overlay to let the background image show through clearly while keeping text readable */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1c2748]/80 via-[#1c2748]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#1c2748]/85 via-[#1c2748]/60 to-transparent" />
                 </div>
 
-                {/* Left Content (clean overlay text directly on the gradient background, aligned with main margins) */}
-                <div className="relative z-10 mx-6 sm:mx-16 md:mx-24 lg:mx-32 xl:mx-40 max-w-xl text-left py-10">
+                {/* Left Content */}
+                <div className="relative z-10 mx-4 sm:mx-12 md:mx-20 lg:mx-32 xl:mx-40 max-w-xl text-left py-6 sm:py-10 px-2 sm:px-0">
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -87,7 +87,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white tracking-tight"
+                    className="mt-4 sm:mt-6 text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white tracking-tight"
                   >
                     {slide.title}
                   </motion.h1>
@@ -96,7 +96,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mt-5 text-sm sm:text-base leading-relaxed text-slate-200 font-medium max-w-lg"
+                    className="mt-3 sm:mt-5 text-xs sm:text-base leading-relaxed text-slate-200 font-medium max-w-lg"
                   >
                     {slide.subtitle}
                   </motion.p>
@@ -105,17 +105,17 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-wrap gap-4 mt-8"
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8"
                   >
                     <Link 
                       to="/about"
-                      className="bg-[#F7DB07] hover:bg-[#ebd006] text-[#344474] px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer text-center text-sm"
+                      className="bg-[#F7DB07] hover:bg-[#ebd006] text-[#344474] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer text-center text-sm"
                     >
                       Read More
                     </Link>
                     <Link 
                       to="/contact"
-                      className="border-2 border-white/80 text-white hover:bg-white hover:text-[#344474] px-8 py-3.5 rounded-full font-bold transition-all duration-300 hover:-translate-y-0.5 cursor-pointer text-center text-sm"
+                      className="border-2 border-white/80 text-white hover:bg-white hover:text-[#344474] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold transition-all duration-300 hover:-translate-y-0.5 cursor-pointer text-center text-sm"
                     >
                       Contact Us
                     </Link>
@@ -128,8 +128,8 @@ export default function Hero() {
       </div>
 
       {/* Stats Board with premium card design */}
-      <div className="relative z-20 px-6 pb-6 mt-8 sm:mt-12">
-        <div className="max-w-5xl mx-auto rounded-[2rem] overflow-hidden bg-gradient-to-r from-[#344474] via-[#3a4d85] to-[#344474] shadow-[0_20px_50px_rgba(52,68,116,0.25)] border border-white/10">
+      <div className="relative z-20 px-4 sm:px-6 pb-6 mt-6 sm:mt-12">
+        <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-[2rem] overflow-hidden bg-gradient-to-r from-[#344474] via-[#3a4d85] to-[#344474] shadow-[0_20px_50px_rgba(52,68,116,0.25)] border border-white/10">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
             {[
               {
@@ -148,13 +148,13 @@ export default function Hero() {
               <motion.div
                 key={index}
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.03)" }}
-                className="py-8 text-center transition-colors duration-300"
+                className="py-6 sm:py-8 text-center transition-colors duration-300"
               >
-                <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
                   {item.value}
                 </h2>
-                <div className="w-12 h-1 bg-[#F7DB07] mx-auto my-3.5 rounded-full"></div>
-                <p className="uppercase tracking-[3px] text-white/80 text-[11px] font-extrabold">
+                <div className="w-12 h-1 bg-[#F7DB07] mx-auto my-2.5 sm:my-3.5 rounded-full"></div>
+                <p className="uppercase tracking-[3px] text-white/80 text-[10px] sm:text-[11px] font-extrabold">
                   {item.label}
                 </p>
               </motion.div>
